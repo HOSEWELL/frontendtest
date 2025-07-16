@@ -20,7 +20,7 @@ export default function FormPage() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/register/", formData);
+      await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/register/`, formData);
       alert("Registration successful!");
       setFormData({
         first_name: "",
