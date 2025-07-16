@@ -13,11 +13,11 @@ export default function FormPage() {
     gender: "M",
   });
 
-  const handleChange = (e: any) => {
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: any) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/register/`, formData);
@@ -29,9 +29,10 @@ export default function FormPage() {
         phone: "",
         gender: "M",
       });
-    } catch (err) {
-      alert("Failed to register.");
-    }
+    } catch {
+  alert("Failed to register.");
+}
+
   };
 
   return (

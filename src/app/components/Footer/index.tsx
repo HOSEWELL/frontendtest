@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
     const [isLoading, setIsLoading] = useState(false);
     const [subscribed, setSubscribed] = useState(false);
-    const pathname = usePathname();
 
     const handleSubscribe = () => {
         setIsLoading(true);

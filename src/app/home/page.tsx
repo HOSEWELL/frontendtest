@@ -1,6 +1,8 @@
 "use client";
 import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
+import Image from "next/image";
+
 import Link from "next/link";
 
 export default function HomePage() {
@@ -20,10 +22,12 @@ export default function HomePage() {
             </button>
           </Link>
         </div>
-        <img
+        <Image
           src="https://i.pinimg.com/736x/96/07/d4/9607d4b663436d225e2d3acc20abe39d.jpg"
           alt="forensic"
-          className="w-[40em] mt-5 md:mt-0"
+          width={640} // or adjust to match actual size
+          height={480}
+          className="mt-5 md:mt-0 w-auto"
         />
       </section>
       <Footer/>
